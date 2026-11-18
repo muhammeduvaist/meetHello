@@ -1,0 +1,376 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MeetHello - Connect Beyond Boundaries</title>
+
+    <link rel="stylesheet" href="/css/home.css">
+<link rel="stylesheet" href="/css/theme.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <%- include('../partials/theme') %>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+
+        <a href="/" class="logo">
+            Meet<span>Hello</span>.
+        </a>
+
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#features">Features</a>
+            <a href="#about">About</a>
+        </div>
+
+        <div class="nav-actions">
+            <a href="/login" class="login">Log in</a>
+            <a href="/register" class="btn btn-primary">Get Started →</a>
+        </div>
+    </nav>
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="tag">
+                <i></i>
+                SIMPLE. SECURE. CONNECTED.
+            </div>
+
+            <h1>
+                Bring People<br>
+                Together,<br>
+                <span class="gradient-text">Anywhere.</span>
+            </h1>
+
+            <p class="hero-description">
+                Experience seamless video meetings with MeetHello.
+                Connect with your team, friends, and family through
+                crystal-clear video calls, instant messaging, and
+                effortless collaboration.
+            </p>
+
+            <div class="hero-actions">
+
+                <button class="btn btn-primary"
+                    onclick="createMeeting()">
+                    ＋ Start a Meeting
+                </button>
+
+                <a href="#quick-actions"
+                    class="btn btn-outline">
+                    Join a Meeting →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- VIDEO MEETING PREVIEW -->
+
+        <div class="preview-wrapper">
+
+            <div class="floating-card one">
+                <span style="color:#72e6a1">●</span>
+                HD Video Quality
+            </div>
+
+            <div class="meeting-window">
+
+                <div class="meeting-header">
+                    <span>Team Meeting</span>
+                    <span class="live">● LIVE &nbsp; 04:32</span>
+                </div>
+
+                <div class="video-grid">
+
+                    <div class="video-box">
+                        <div class="avatar">A</div>
+                        <span class="video-name">Alex Morgan</span>
+                    </div>
+
+                    <div class="video-box">
+                        <div class="avatar">S</div>
+                        <span class="video-name">Sarah Wilson</span>
+                    </div>
+
+                    <div class="video-box">
+                        <div class="avatar">J</div>
+                        <span class="video-name">John Smith</span>
+                    </div>
+
+                    <div class="video-box">
+                        <div class="avatar">M</div>
+                        <span class="video-name">Michael Lee</span>
+                    </div>
+
+                </div>
+
+                <div class="meeting-controls">
+                    <div class="control">🎤</div>
+                    <div class="control">📹</div>
+                    <div class="control">🖥</div>
+                    <div class="control">💬</div>
+                    <div class="control end">📞</div>
+                </div>
+
+            </div>
+
+            <div class="floating-card two">
+                <span style="color:#a18aff">✦</span>
+                &nbsp; Everyone connected!
+            </div>
+
+        </div>
+
+    </section>
+    <!-- QUICK ACTIONS -->
+    <section class="quick-section" id="quick-actions">
+
+        <div class="quick-grid">
+
+            <div class="quick-card reveal">
+
+                <div class="quick-icon">🎥</div>
+
+                <h3>Start a Meeting</h3>
+
+                <p>
+                    Start an instant video meeting and invite
+                    anyone with a simple link.
+                </p>
+
+                <button class="btn btn-primary"
+                    onclick="createMeeting()">
+                    New Meeting →
+                </button>
+
+            </div>
+
+
+            <div class="quick-card reveal">
+
+                <div class="quick-icon">🔗</div>
+
+                <h3>Join a Meeting</h3>
+
+                <p>
+                    Have a meeting code? Enter it below
+                    and connect instantly.
+                </p>
+
+                <form class="join-form" onsubmit="joinMeeting(event)">
+
+                    <input
+                        type="text"
+                        id="meetingCode"
+                        placeholder="Enter meeting code"
+                        required
+                    >
+
+                    <button class="btn btn-primary" type="submit">
+                        Join
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <div class="quick-card reveal">
+
+                <div class="quick-icon">📅</div>
+
+                <h3>Schedule a Meeting</h3>
+
+                <p>
+                    Plan your meetings in advance and
+                    keep everyone on the same page.
+                </p>
+
+                <button class="btn btn-outline"
+                    onclick="window.location.href='/schedule'">
+                    Schedule Now →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- FEATURES -->
+    <section class="section features" id="features">
+
+        <div class="section-heading reveal">
+
+            <h2>
+                Everything You Need to
+                <span class="gradient-text">Connect</span>
+            </h2>
+
+            <p>
+                Powerful features designed to make every
+                conversation meaningful.
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+            <div class="feature-card reveal">
+                <div class="quick-icon">📹</div>
+                <h3>HD Video Meetings</h3>
+                <p>
+                    Enjoy smooth, high-quality video calls
+                    with your team and friends.
+                </p>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="quick-icon">🎙️</div>
+                <h3>Crystal Clear Audio</h3>
+                <p>
+                    Experience reliable audio communication
+                    for uninterrupted conversations.
+                </p>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="quick-icon">🖥️</div>
+                <h3>Screen Sharing</h3>
+                <p>
+                    Share your entire screen or a window
+                    to collaborate more effectively.
+                </p>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="quick-icon">💬</div>
+                <h3>Live Chat</h3>
+                <p>
+                    Send messages and share information
+                    with participants during meetings.
+                </p>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="quick-icon">🔒</div>
+                <h3>Secure Meetings</h3>
+                <p>
+                    Keep conversations private with
+                    protected meeting access.
+                </p>
+            </div>
+
+            <div class="feature-card reveal">
+                <div class="quick-icon">👥</div>
+                <h3>Team Collaboration</h3>
+                <p>
+                    Bring your entire team together
+                    from anywhere in the world.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+    <!-- ABOUT / CTA -->
+    <section class="cta reveal" id="about">
+
+        <h2>Great Conversations Start Here.</h2>
+
+        <p>
+            No complicated setup. No boundaries.
+            Just connect and start talking.
+        </p>
+
+        <a href="/register" class="btn">
+            Get Started for Free →
+        </a>
+
+    </section>
+    <!-- FOOTER -->
+    <footer>
+
+        <a href="/" class="logo">
+            Meet<span>Hello</span>.
+        </a>
+
+        <p>© <%= new Date().getFullYear() %> MeetHello. All rights reserved.</p>
+
+        <p>Made for better connections ✨</p>
+
+    </footer>
+    <!-- JAVASCRIPT -->
+    <script>
+
+        // Create a new meeting
+        function createMeeting() {
+
+            const roomId = 'meet-' +
+                Math.random().toString(36).substring(2, 10);
+
+            window.location.href = '/meeting/' + roomId;
+
+        }
+
+
+        // Join an existing meeting
+        function joinMeeting(event) {
+
+            event.preventDefault();
+
+            const code = document
+                .getElementById('meetingCode')
+                .value.trim();
+
+            if (!code) {
+                alert('Please enter a meeting code');
+                return;
+            }
+
+            window.location.href =
+                '/meeting/' + encodeURIComponent(code);
+
+        }
+
+
+        // Scroll reveal animation
+        const observer = new IntersectionObserver(
+            (entries) => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add('show');
+
+                        observer.unobserve(entry.target);
+
+                    }
+
+                });
+
+            },
+            {
+                threshold: 0.12
+            }
+        );
+
+        document.querySelectorAll('.reveal').forEach(element => {
+            observer.observe(element);
+        });
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,522 @@
+
+/* =====================================
+   MEETHELLO - SHARED THEME
+===================================== */
+
+:root {
+    color-scheme: dark;
+
+    --primary: #167C65;
+    --secondary: #38C99A;
+    --accent: #38C99A;
+
+    --bg: #0B1715;
+    --dark: #10221D;
+    --card: #142A25;
+
+    --text: #E8F7F0;
+    --muted: #A2BDB0;
+    --border: #28443A;
+    --input-bg: #10221D;
+
+    --gradient: linear-gradient(120deg, #167C65, #38C99A);
+    --glow: rgba(56, 201, 154, .18);
+}
+
+[data-theme="light"] {
+    color-scheme: light;
+
+    --primary: #167C65;
+    --secondary: #22A879;
+    --accent: #22A879;
+
+    --bg: #F3F9F5;
+    --dark: #EAF4ED;
+    --card: #FFFFFF;
+
+    --text: #10251D;
+    --muted: #526E61;
+    --border: #D5E6DB;
+    --input-bg: #F7FBF8;
+
+    --gradient: linear-gradient(120deg, #167C65, #22A879);
+    --glow: rgba(34, 168, 121, .12);
+}
+
+/* GLOBAL */
+
+body {
+    background: var(--bg) !important;
+    color: var(--text) !important;
+    transition: background .3s ease, color .3s ease;
+}
+
+/* NAVBAR */
+
+.navbar {
+    background: color-mix(in srgb, var(--bg) 88%, transparent) !important;
+    border-bottom-color: var(--border) !important;
+}
+
+.logo span {
+    color: var(--secondary) !important;
+}
+
+.nav-links,
+.login {
+    color: var(--muted) !important;
+}
+
+.nav-links a:hover,
+.login:hover {
+    color: var(--accent) !important;
+}
+
+/* BUTTONS */
+
+.btn-primary,
+.login-btn,
+.register-btn {
+    background: var(--gradient) !important;
+    color: #FFFFFF !important;
+    box-shadow: 0 8px 25px var(--glow) !important;
+}
+
+.btn-primary:hover,
+.login-btn:hover,
+.register-btn:hover {
+    box-shadow: 0 12px 30px rgba(34, 168, 121, .3) !important;
+}
+
+.btn-outline {
+    border-color: var(--border) !important;
+    color: var(--text) !important;
+}
+
+.btn-outline:hover {
+    border-color: var(--accent) !important;
+    background: var(--glow) !important;
+}
+
+/* HERO */
+
+.hero::before {
+    background: #22A879 !important;
+    opacity: .12 !important;
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #38C99A, #8AE6BE) !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    color: transparent !important;
+}
+
+.hero-description,
+.hero-content p {
+    color: var(--muted) !important;
+}
+
+.tag {
+    background: var(--glow) !important;
+    border-color: var(--border) !important;
+    color: var(--accent) !important;
+}
+
+.tag i {
+    background: var(--accent) !important;
+    box-shadow: 0 0 12px var(--accent) !important;
+}
+
+/* MEETING PREVIEW */
+
+.meeting-window,
+.call-card {
+    background: var(--card) !important;
+    border-color: var(--border) !important;
+}
+
+.meeting-header,
+.call-header {
+    color: var(--muted) !important;
+}
+
+.live {
+    color: var(--accent) !important;
+}
+
+.video-box {
+    background: linear-gradient(135deg, #245747, #172F29) !important;
+}
+
+.video-box:nth-child(2) {
+    background: linear-gradient(135deg, #326A58, #1B3D32) !important;
+}
+
+.video-box:nth-child(3) {
+    background: linear-gradient(135deg, #315A50, #1D3730) !important;
+}
+
+.video-box:nth-child(4) {
+    background: linear-gradient(135deg, #386C59, #1D4033) !important;
+}
+
+.avatar {
+    background: linear-gradient(135deg, #38C99A, #167C65) !important;
+}
+
+.control {
+    background: #28443A !important;
+}
+
+.control.end,
+.call-footer span:last-child {
+    background: #E65364 !important;
+}
+
+.floating-card {
+    background: var(--card) !important;
+    border-color: var(--border) !important;
+}
+
+/* QUICK ACTIONS AND FEATURES */
+
+.quick-card,
+.feature-card {
+    background: var(--card) !important;
+    border-color: var(--border) !important;
+}
+
+.quick-card:hover,
+.feature-card:hover {
+    background: var(--surface-hover, #1B3830) !important;
+    border-color: var(--accent) !important;
+}
+
+.quick-icon {
+    background: var(--glow) !important;
+    color: var(--accent) !important;
+}
+
+.quick-card p,
+.feature-card p,
+.section-heading p {
+    color: var(--muted) !important;
+}
+
+.features {
+    background: var(--dark) !important;
+}
+
+/* JOIN INPUT */
+
+.join-form input,
+.input-wrapper input {
+    background: var(--input-bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+.join-form input:focus,
+.input-wrapper input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--glow) !important;
+}
+
+.join-form input::placeholder,
+.input-wrapper input::placeholder {
+    color: var(--muted) !important;
+}
+
+/* AUTH PAGES */
+
+.left-panel {
+    background:
+        radial-gradient(circle at 20% 30%, rgba(34, 168, 121, .20), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(22, 124, 101, .15), transparent 40%),
+        var(--dark) !important;
+}
+
+.left-panel::before,
+.left-panel::after {
+    border-color: var(--border) !important;
+}
+
+.hero-content .tag,
+.tag {
+    color: var(--accent) !important;
+}
+
+.person {
+    background: linear-gradient(145deg, #38C99A, #245747) !important;
+}
+
+.person:nth-child(2) {
+    background: linear-gradient(145deg, #2D9B78, #245747) !important;
+}
+
+.person:nth-child(3) {
+    background: linear-gradient(145deg, #367C68, #1D4033) !important;
+}
+
+.right-panel {
+    background: var(--bg) !important;
+}
+
+.form-group label {
+    color: var(--text) !important;
+}
+
+.toggle-password {
+    color: var(--muted) !important;
+}
+
+.forgot,
+.signup-text a,
+.login-text a,
+.terms a {
+    color: var(--accent) !important;
+}
+
+.forgot:hover,
+.signup-text a:hover,
+.login-text a:hover {
+    color: var(--primary) !important;
+}
+
+.remember,
+.terms,
+.signup-text,
+.login-text {
+    color: var(--muted) !important;
+}
+
+.remember input,
+.terms input {
+    accent-color: var(--accent) !important;
+}
+
+.google-btn {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+.google-btn:hover {
+    background: var(--dark) !important;
+    border-color: var(--accent) !important;
+}
+
+.divider {
+    color: var(--muted) !important;
+}
+
+.divider::before,
+.divider::after {
+    background: var(--border) !important;
+}
+
+.password-strength {
+    background: var(--border) !important;
+}
+
+.strength-bar {
+    background: var(--accent);
+}
+
+.error-message {
+    color: #E65364 !important;
+}
+
+/* CTA AND FOOTER */
+
+.cta {
+    background: linear-gradient(120deg, #145D4C, #167C65, #239B76) !important;
+}
+
+.cta p {
+    color: #E4F8EE !important;
+}
+
+.cta .btn {
+    background: #FFFFFF !important;
+    color: #167C65 !important;
+}
+
+footer {
+    border-color: var(--border) !important;
+    color: var(--muted) !important;
+}
+
+/* THEME TOGGLE */
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 22px;
+    z-index: 9999;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .12);
+    transition: .25s ease;
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+}
+
+@media(max-width: 650px) {
+    .theme-toggle {
+        top: 14px;
+        right: 14px;
+        padding: 8px 12px;
+    }
+}
+
+@media(prefers-reduced-motion: reduce) {
+    body,
+    .theme-toggle {
+        transition: none !important;
+    }
+}
+
+/* =====================================
+   MEETHELLO - THEME-AWARE HOVER EFFECTS
+===================================== */
+
+/* Common transition */
+a,
+button,
+.quick-card,
+.feature-card,
+.google-btn,
+.btn,
+.control,
+.floating-card {
+    transition:
+        background .3s ease,
+        color .3s ease,
+        border-color .3s ease,
+        box-shadow .3s ease,
+        transform .3s ease;
+}
+
+/* NAVBAR */
+.nav-links a:hover,
+.login:hover {
+    color: var(--accent) !important;
+}
+
+/* BUTTONS */
+.btn-primary:hover,
+.login-btn:hover,
+.register-btn:hover {
+    background: var(--gradient) !important;
+    box-shadow: 0 10px 30px var(--glow) !important;
+    filter: brightness(1.08);
+}
+
+.btn-outline:hover {
+    background: var(--glow) !important;
+    border-color: var(--accent) !important;
+    color: var(--accent) !important;
+}
+
+/* QUICK CARDS */
+.quick-card:hover,
+.feature-card:hover {
+    background: var(--surface-hover) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 15px 35px var(--glow);
+    transform: translateY(-7px);
+}
+
+/* ICONS */
+.quick-card:hover .quick-icon,
+.feature-card:hover .quick-icon {
+    background: var(--primary) !important;
+    color: #FFFFFF !important;
+}
+
+/* FORM INPUTS */
+.input-wrapper input:hover,
+.join-form input:hover {
+    border-color: var(--accent) !important;
+}
+
+.input-wrapper input:focus,
+.join-form input:focus {
+    border-color: var(--accent) !important;
+    box-shadow: 0 0 0 3px var(--glow) !important;
+}
+
+/* GOOGLE BUTTON */
+.google-btn:hover {
+    background: var(--surface-hover) !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 5px 20px var(--glow);
+}
+
+/* LINKS */
+.forgot:hover,
+.signup-text a:hover,
+.login-text a:hover,
+.terms a:hover {
+    color: var(--primary) !important;
+    text-decoration: underline;
+}
+
+/* THEME TOGGLE */
+.theme-toggle:hover {
+    background: var(--primary) !important;
+    color: #FFFFFF !important;
+    border-color: var(--accent) !important;
+    box-shadow: 0 5px 20px var(--glow);
+}
+
+/* FLOATING CARDS */
+.floating-card:hover {
+    border-color: var(--accent) !important;
+    box-shadow: 0 12px 30px var(--glow);
+}
+
+/* LIGHT MODE SPECIFIC */
+[data-theme="light"] .quick-card:hover,
+[data-theme="light"] .feature-card:hover {
+    background: #EAF4ED !important;
+}
+
+[data-theme="light"] .google-btn:hover {
+    background: #EAF4ED !important;
+}
+
+[data-theme="light"] .btn-outline:hover {
+    background: #DFF3E8 !important;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+/* REDUCED MOTION */
+@media (prefers-reduced-motion: reduce) {
+    a,
+    button,
+    .quick-card,
+    .feature-card {
+        transition: none !important;
+        transform: none !important;
+    }
+}
