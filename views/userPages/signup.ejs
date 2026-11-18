@@ -1,383 +1,280 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Account | MeetHello</title>
 
-    <link rel="stylesheet" href="css/signup.css">
-<link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/signup.css">
+    <link rel="stylesheet" href="/css/theme.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
 </head>
 
 <body>
 
-<%- include('../partials/theme') %>
-    <!-- LEFT PANEL -->
+    <%- include('../partials/theme') %>
 
-    <section class="left-panel">
+        <!-- LEFT PANEL -->
+        <section class="left-panel">
 
-        <a href="/" class="logo">
-            Meet<span>Hello</span>.
-        </a>
-
-        <div class="hero-content">
-
-            <div class="tag">
-                YOUR CONNECTION STARTS HERE
-            </div>
-
-            <h1>
-                Meet New<br>
-                Possibilities.<br>
-                <span class="gradient-text">Stay Connected.</span>
-            </h1>
-
-            <p>
-                Create your MeetHello account and experience
-                seamless communication. Bring your team,
-                friends, and family closer together.
-            </p>
-
-            <div class="illustration">
-
-                <div class="call-card">
-
-                    <div class="call-header">
-                        <span>✦ &nbsp; MeetHello Community</span>
-                        <span style="color:#72e6a1">● ONLINE</span>
-                    </div>
-
-                    <div class="people">
-                        <div class="person">A</div>
-                        <div class="person">S</div>
-                        <div class="person">J</div>
-                    </div>
-
-                    <div class="call-footer">
-                        <span>🎤</span>
-                        <span>📹</span>
-                        <span>🖥</span>
-                        <span>📞</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="left-bottom">
-            © <%= new Date().getFullYear() %> MeetHello. All rights reserved.
-        </div>
-
-    </section>
-
-
-    <!-- RIGHT PANEL -->
-
-    <section class="right-panel">
-
-        <div class="register-container">
-
-            <a href="/" class="logo mobile-logo">
+            <a href="/" class="logo">
                 Meet<span>Hello</span>.
             </a>
 
-            <div class="register-heading">
+            <div class="hero-content">
 
-                <h2>Create your account ✨</h2>
+                <div class="tag">
+                    YOUR CONNECTION STARTS HERE
+                </div>
+
+                <h1>
+                    Meet New<br>
+                    Possibilities.<br>
+                    <span class="gradient-text">Stay Connected.</span>
+                </h1>
 
                 <p>
-                    Join MeetHello and start connecting
-                    with people around the world.
+                    Create your MeetHello account and experience
+                    seamless communication. Bring your team,
+                    friends, and family closer together.
                 </p>
+
+                <div class="illustration">
+
+                    <div class="call-card">
+
+                        <div class="call-header">
+                            <span>✦ &nbsp; MeetHello Community</span>
+                            <span style="color:#72e6a1">● ONLINE</span>
+                        </div>
+
+                        <div class="people">
+                            <div class="person">A</div>
+                            <div class="person">S</div>
+                            <div class="person">J</div>
+                        </div>
+
+                        <div class="call-footer">
+                            <span>🎤</span>
+                            <span>📹</span>
+                            <span>🖥</span>
+                            <span>📞</span>
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
+            <div class="left-bottom">
+                © <%= new Date().getFullYear() %> MeetHello. All rights reserved.
+            </div>
 
-            <% if (typeof error !== 'undefined' && error) { %>
-                <div class="error-message">
-                    <%= error %>
-                </div>
-            <% } %>
-
-
-            <form action="/register" method="POST"
-                onsubmit="return validateForm(event)">
-
-                <!-- FULL NAME -->
-
-                <div class="form-group">
-
-                    <label for="name">Full Name</label>
-
-                    <div class="input-wrapper">
-
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            placeholder="Enter your full name"
-                            autocomplete="name"
-                            minlength="2"
-                            maxlength="60"
-                            required
-                        >
-
-                    </div>
-
-                </div>
+        </section>
 
 
-                <!-- EMAIL -->
+        <!-- RIGHT PANEL -->
+        <section class="right-panel">
 
-                <div class="form-group">
+            <div class="register-container">
 
-                    <label for="email">Email Address</label>
+                <a href="/" class="logo mobile-logo">
+                    Meet<span>Hello</span>.
+                </a>
 
-                    <div class="input-wrapper">
+                <div class="register-heading">
 
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email address"
-                            autocomplete="email"
-                            required
-                        >
+                    <h2>Create your account ✨</h2>
 
-                    </div>
-
-                </div>
-
-
-                <!-- PASSWORD -->
-
-                <div class="form-group">
-
-                    <label for="password">Password</label>
-
-                    <div class="input-wrapper">
-
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            class="password-input"
-                            placeholder="Create a password"
-                            autocomplete="new-password"
-                            minlength="8"
-                            required
-                        >
-
-                        <button
-                            type="button"
-                            class="toggle-password"
-                            onclick="togglePassword('password', this)"
-                        >
-                            Show
-                        </button>
-
-                    </div>
-
-                    <div class="password-strength">
-                        <div class="strength-bar" id="strengthBar"></div>
-                    </div>
-
-                    <p class="strength-text" id="strengthText">
-                        Use at least 8 characters.
+                    <p>
+                        Join MeetHello and start connecting
+                        with people around the world.
                     </p>
 
                 </div>
 
 
-                <!-- CONFIRM PASSWORD -->
-
-                <div class="form-group">
-
-                    <label for="confirmPassword">Confirm Password</label>
-
-                    <div class="input-wrapper">
-
-                        <input
-                            type="password"
-                            id="confirmPassword"
-                            name="confirmPassword"
-                            class="password-input"
-                            placeholder="Confirm your password"
-                            autocomplete="new-password"
-                            required
-                        >
-
-                        <button
-                            type="button"
-                            class="toggle-password"
-                            onclick="togglePassword('confirmPassword', this)"
-                        >
-                            Show
-                        </button>
-
+                <!-- SERVER ERROR MESSAGE -->
+                <% if (typeof error !=='undefined' && error) { %>
+                    <div class="error-message">
+                        <%= error %>
                     </div>
-
-                </div>
-
-
-                <!-- TERMS -->
-
-                <label class="terms">
-
-                    <input type="checkbox" id="terms" required>
-
-                    <span>
-                        I agree to the
-                        <a href="/terms">Terms of Service</a>
-                        and
-                        <a href="/privacy">Privacy Policy</a>.
-                    </span>
-
-                </label>
+                    <% } %>
 
 
-                <!-- SUBMIT -->
+                        <!-- SIGNUP FORM -->
+                        <form action="/register" method="POST" id="signupForm">
 
-                <button type="submit" class="register-btn">
-                    Create Account →
-                </button>
+                            <!-- FULL NAME -->
+                            <div class="form-group">
 
-            </form>
+                                <label for="name">Full Name</label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="text" id="name" name="name" placeholder="Enter your full name"
+                                        autocomplete="name" maxlength="60">
+
+                                </div>
+
+                                <small class="field-error" id="nameError"></small>
+
+                            </div>
 
 
-            <div class="divider">
-                OR SIGN UP WITH
+                            <!-- EMAIL -->
+                            <div class="form-group">
+
+                                <label for="email">Email Address</label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                        autocomplete="email">
+
+                                </div>
+
+                                <small class="field-error" id="emailError"></small>
+
+                            </div>
+
+
+                            <!-- PASSWORD -->
+                            <div class="form-group">
+
+                                <label for="password">Password</label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="password" id="password" name="password" class="password-input"
+                                        placeholder="Create a password" autocomplete="new-password">
+
+                                    <button type="button" class="toggle-password"
+                                        onclick="togglePassword('password', this)">
+                                        Show
+                                    </button>
+
+                                </div>
+
+                                <small class="field-error" id="passwordError"></small>
+
+                                <div class="password-strength">
+                                    <div class="strength-bar" id="strengthBar"></div>
+                                </div>
+
+                                <p class="strength-text" id="strengthText">
+                                    Use at least 8 characters.
+                                </p>
+
+                            </div>
+
+
+                            <!-- CONFIRM PASSWORD -->
+                            <div class="form-group">
+
+                                <label for="confirmPassword">Confirm Password</label>
+
+                                <div class="input-wrapper">
+
+                                    <input type="password" id="confirmPassword" name="confirmPassword"
+                                        class="password-input" placeholder="Confirm your password"
+                                        autocomplete="new-password">
+
+                                    <button type="button" class="toggle-password"
+                                        onclick="togglePassword('confirmPassword', this)">
+                                        Show
+                                    </button>
+
+                                </div>
+
+                                <small class="field-error" id="confirmPasswordError"></small>
+
+                            </div>
+
+
+                            <!-- TERMS -->
+                            <div class="form-group">
+
+                                <label class="terms">
+
+                                    <input type="checkbox" id="terms">
+
+                                    <span>
+                                        I agree to the
+                                        <a href="/terms">Terms of Service</a>
+                                        and
+                                        <a href="/privacy">Privacy Policy</a>.
+                                    </span>
+
+                                </label>
+
+                                <small class="field-error" id="termsError"></small>
+
+                            </div>
+
+
+                            <!-- SUBMIT -->
+                            <button type="submit" class="register-btn">
+                                Create Account →
+                            </button>
+
+                        </form>
+
+
+                        <!-- DIVIDER -->
+                        <div class="divider">
+                            OR SIGN UP WITH
+                        </div>
+
+
+                        <!-- GOOGLE SIGNUP -->
+                        <a href="/auth/google" class="google-btn">
+
+                            <svg class="google-icon" viewBox="0 0 48 48">
+
+                                <path fill="#4285F4"
+                                    d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11c-.5 2.5-1.9 4.6-4 6v5h6.5c3.8-3.5 6.1-8.6 6.1-14.7z" />
+
+                                <path fill="#34A853"
+                                    d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.5-5c-1.8 1.2-4.1 2-7 2-5.3 0-9.8-3.6-11.4-8.4H6v5.1C9.4 39.5 16.2 44 24 44z" />
+
+                                <path fill="#FBBC05"
+                                    d="M12.6 27.8c-.4-1.2-.7-2.5-.7-3.8s.2-2.6.7-3.8v-5.1H6C4.6 17.9 3.8 20.9 3.8 24s.8 6.1 2.2 8.9l6.6-5.1z" />
+
+                                <path fill="#EA4335"
+                                    d="M24 11.6c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.6 29.5 4 24 4 16.2 4 9.4 8.5 6 15.1l6.6 5.1c1.6-4.9 6.1-8.6 11.4-8.6z" />
+
+                            </svg>
+
+                            Continue with Google
+
+                        </a>
+
+
+                        <!-- LOGIN LINK -->
+                        <div class="login-text">
+
+                            Already have an account?
+
+                            <a href="/login">
+                                Sign in
+                            </a>
+
+                        </div>
+
             </div>
 
-
-            <button
-                type="button"
-                class="google-btn"
-                onclick="window.location.href='/auth/google'"
-            >
-
-                <svg class="google-icon" viewBox="0 0 48 48">
-                    <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11c-.5 2.5-1.9 4.6-4 6v5h6.5c3.8-3.5 6.1-8.6 6.1-14.7z"/>
-                    <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.5-5c-1.8 1.2-4.1 2-7 2-5.3 0-9.8-3.6-11.4-8.4H6v5.1C9.4 39.5 16.2 44 24 44z"/>
-                    <path fill="#FBBC05" d="M12.6 27.8c-.4-1.2-.7-2.5-.7-3.8s.2-2.6.7-3.8v-5.1H6C4.6 17.9 3.8 20.9 3.8 24s.8 6.1 2.2 8.9l6.6-5.1z"/>
-                    <path fill="#EA4335" d="M24 11.6c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.6 29.5 4 24 4 16.2 4 9.4 8.5 6 15.1l6.6 5.1c1.6-4.9 6.1-8.6 11.4-8.6z"/>
-                </svg>
-
-                Continue with Google
-
-            </button>
+        </section>
 
 
-            <div class="login-text">
-
-                Already have an account?
-
-                <a href="/login">
-                    Sign in
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- JAVASCRIPT -->
-
-    <script>
-
-        // Show / Hide Password
-
-        function togglePassword(id, button) {
-
-            const input = document.getElementById(id);
-
-            if (input.type === 'password') {
-                input.type = 'text';
-                button.textContent = 'Hide';
-            } else {
-                input.type = 'password';
-                button.textContent = 'Show';
-            }
-
-        }
-
-
-        // Password strength indicator
-
-        const passwordInput = document.getElementById('password');
-        const strengthBar = document.getElementById('strengthBar');
-        const strengthText = document.getElementById('strengthText');
-
-        passwordInput.addEventListener('input', function () {
-
-            const value = this.value;
-
-            let score = 0;
-
-            if (value.length >= 8) score++;
-            if (/[A-Z]/.test(value)) score++;
-            if (/[a-z]/.test(value)) score++;
-            if (/[0-9]/.test(value)) score++;
-            if (/[^A-Za-z0-9]/.test(value)) score++;
-
-            const levels = [
-                { width: '0%', color: 'transparent', text: 'Use at least 8 characters.' },
-                { width: '20%', color: '#ff647c', text: 'Very weak password' },
-                { width: '40%', color: '#ff9d58', text: 'Weak password' },
-                { width: '60%', color: '#f2c45e', text: 'Fair password' },
-                { width: '80%', color: '#83c8a2', text: 'Good password' },
-                { width: '100%', color: '#52d99b', text: 'Strong password' }
-            ];
-
-            const level = levels[score];
-
-            strengthBar.style.width = level.width;
-            strengthBar.style.background = level.color;
-            strengthText.textContent = level.text;
-
-        });
-
-
-        // Form validation
-
-        function validateForm(event) {
-
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
-
-            if (password.length < 8) {
-                event.preventDefault();
-                alert('Password must contain at least 8 characters.');
-                return false;
-            }
-
-            if (password !== confirmPassword) {
-                event.preventDefault();
-                alert('Passwords do not match!');
-                return false;
-            }
-
-            if (!document.getElementById('terms').checked) {
-                event.preventDefault();
-                alert('Please accept the Terms and Conditions.');
-                return false;
-            }
-
-            return true;
-
-        }
-
-    </script>
+        <!-- EXTERNAL JAVASCRIPT -->
+        <script src="/js/signup.js"></script>
 
 </body>
+
 </html>

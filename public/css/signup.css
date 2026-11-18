@@ -483,3 +483,15 @@ input {
         transition-duration: .01ms !important;
     }
 }
+
+.field-error {
+    display: block;
+    color: #ff647c;
+    font-size: 12px;
+    margin-top: 6px;
+    min-height: 15px;
+}
+
+.input-wrapper input.input-error {
+    border-color: #ff647c;
+}

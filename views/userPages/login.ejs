@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | MeetHello</title>
 
     <link rel="stylesheet" href="css/login.css">
-<link rel="stylesheet" href="/css/theme.css">
+    <link rel="stylesheet" href="/css/theme.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,234 +17,192 @@
 
 <body>
 
-<%- include('../partials/theme') %>
-    <!-- LEFT PANEL -->
+    <%- include('../partials/theme') %>
+        <!-- LEFT PANEL -->
 
-    <section class="left-panel">
+        <section class="left-panel">
 
-        <a href="/" class="logo">
-            Meet<span>Hello</span>.
-        </a>
-
-        <div class="hero-content">
-
-            <div class="tag">
-                CONNECT WITHOUT LIMITS
-            </div>
-
-            <h1>
-                Your World.<br>
-                Your People.<br>
-                <span class="gradient-text">One Meeting.</span>
-            </h1>
-
-            <p>
-                Distance should never stop a great conversation.
-                Join MeetHello and experience a smarter,
-                simpler way to connect with everyone.
-            </p>
-
-            <div class="illustration">
-
-                <div class="call-card">
-
-                    <div class="call-header">
-                        <span>✦ &nbsp; MeetHello Conference</span>
-                        <span style="color:#72e6a1">● LIVE</span>
-                    </div>
-
-                    <div class="people">
-                        <div class="person">A</div>
-                        <div class="person">S</div>
-                        <div class="person">J</div>
-                    </div>
-
-                    <div class="call-footer">
-                        <span>🎤</span>
-                        <span>📹</span>
-                        <span>🖥</span>
-                        <span>📞</span>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-        <div class="left-bottom">
-            © <%= new Date().getFullYear() %> MeetHello. All rights reserved.
-        </div>
-
-    </section>
-
-
-    <!-- RIGHT PANEL -->
-
-    <section class="right-panel">
-
-        <div class="login-container">
-
-            <a href="/" class="logo mobile-logo">
+            <a href="/" class="logo">
                 Meet<span>Hello</span>.
             </a>
 
-            <div class="login-heading">
+            <div class="hero-content">
 
-                <h2>Welcome back 👋</h2>
+                <div class="tag">
+                    CONNECT WITHOUT LIMITS
+                </div>
+
+                <h1>
+                    Your World.<br>
+                    Your People.<br>
+                    <span class="gradient-text">One Meeting.</span>
+                </h1>
 
                 <p>
-                    Welcome back! Please enter your details
-                    to access your account.
+                    Distance should never stop a great conversation.
+                    Join MeetHello and experience a smarter,
+                    simpler way to connect with everyone.
                 </p>
+
+                <div class="illustration">
+
+                    <div class="call-card">
+
+                        <div class="call-header">
+                            <span>✦ &nbsp; MeetHello Conference</span>
+                            <span style="color:#72e6a1">● LIVE</span>
+                        </div>
+
+                        <div class="people">
+                            <div class="person">A</div>
+                            <div class="person">S</div>
+                            <div class="person">J</div>
+                        </div>
+
+                        <div class="call-footer">
+                            <span>🎤</span>
+                            <span>📹</span>
+                            <span>🖥</span>
+                            <span>📞</span>
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
 
+            <div class="left-bottom">
+                © <%= new Date().getFullYear() %> MeetHello. All rights reserved.
+            </div>
 
-            <% if (typeof error !== 'undefined' && error) { %>
-                <div class="error-message">
-                    <%= error %>
+        </section>
+
+
+        <!-- RIGHT PANEL -->
+
+        <section class="right-panel">
+
+            <div class="login-container">
+
+                <a href="/" class="logo mobile-logo">
+                    Meet<span>Hello</span>.
+                </a>
+
+                <div class="login-heading">
+
+                    <h2>Welcome back 👋</h2>
+
+                    <p>
+                        Welcome back! Please enter your details
+                        to access your account.
+                    </p>
+
                 </div>
-            <% } %>
+                <div class="error-message" id="loginError"></div>
+                <form action="/login" method="POST" id="loginForm" novalidate>
 
+                    <div class="form-group">
 
-            <form action="/login" method="POST">
+                        <label for="email">Email Address</label>
 
-                <div class="form-group">
+                        <div class="input-wrapper">
+                            <input type="email" id="email" name="email" placeholder="Enter your email address"
+                                autocomplete="email">
+                        </div>
 
-                    <label for="email">Email Address</label>
-
-                    <div class="input-wrapper">
-
-                        <input
-                            type="email"
-                            id="email"
-                            name="email"
-                            placeholder="Enter your email address"
-                            autocomplete="email"
-                            required
-                        >
+                        <small class="field-error" id="emailError"></small>
 
                     </div>
 
-                </div>
 
+                    <div class="form-group">
 
-                <div class="form-group">
+                        <label for="password">Password</label>
 
-                    <label for="password">Password</label>
+                        <div class="input-wrapper">
 
-                    <div class="input-wrapper">
+                            <input type="password" id="password" name="password" class="password-input"
+                                placeholder="Enter your password" autocomplete="current-password">
 
-                        <input
-                            type="password"
-                            id="password"
-                            name="password"
-                            class="password-input"
-                            placeholder="Enter your password"
-                            autocomplete="current-password"
-                            required
-                        >
+                            <button type="button" class="toggle-password" onclick="togglePassword()">
+                                Show
+                            </button>
 
-                        <button
-                            type="button"
-                            class="toggle-password"
-                            onclick="togglePassword()"
-                        >
-                            Show
-                        </button>
+                        </div>
+
+                        <small class="field-error" id="passwordError"></small>
 
                     </div>
 
+
+                    <div class="form-options">
+
+                        <label class="remember">
+                            <input type="checkbox" name="remember">
+                            Remember me
+                        </label>
+
+                        <a href="/forgot-password" class="forgot">
+                            Forgot password?
+                        </a>
+
+                    </div>
+
+
+                    <button type="submit" class="login-btn">
+                        Sign In →
+                    </button>
+
+                </form>
+
+
+                <div class="divider">
+                    OR CONTINUE WITH
                 </div>
 
 
-                <div class="form-options">
+                <button type="button" class="google-btn" onclick="window.location.href='/auth/google'">
 
-                    <label class="remember">
-                        <input type="checkbox" name="remember">
-                        Remember me
-                    </label>
+                    <svg class="google-icon" viewBox="0 0 48 48">
+                        <path fill="#4285F4"
+                            d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11c-.5 2.5-1.9 4.6-4 6v5h6.5c3.8-3.5 6.1-8.6 6.1-14.7z" />
+                        <path fill="#34A853"
+                            d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.5-5c-1.8 1.2-4.1 2-7 2-5.3 0-9.8-3.6-11.4-8.4H6v5.1C9.4 39.5 16.2 44 24 44z" />
+                        <path fill="#FBBC05"
+                            d="M12.6 27.8c-.4-1.2-.7-2.5-.7-3.8s.2-2.6.7-3.8v-5.1H6C4.6 17.9 3.8 20.9 3.8 24s.8 6.1 2.2 8.9l6.6-5.1z" />
+                        <path fill="#EA4335"
+                            d="M24 11.6c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.6 29.5 4 24 4 16.2 4 9.4 8.5 6 15.1l6.6 5.1c1.6-4.9 6.1-8.6 11.4-8.6z" />
+                    </svg>
 
-                    <a href="/forgot-password" class="forgot">
-                        Forgot password?
+                    Continue with Google
+
+                </button>
+
+
+                <div class="signup-text">
+
+                    Don't have an account?
+
+                    <a href="/register">
+                        Create an account
                     </a>
 
                 </div>
 
-
-                <button type="submit" class="login-btn">
-                    Sign In →
-                </button>
-
-            </form>
-
-
-            <div class="divider">
-                OR CONTINUE WITH
             </div>
 
+        </section>
 
-            <button
-                type="button"
-                class="google-btn"
-                onclick="window.location.href='/auth/google'"
-            >
+        <script src="/js/login.js"></script>
+        <script>
+            const successMessage = sessionStorage.getItem("successMessage");
 
-                <svg class="google-icon" viewBox="0 0 48 48">
-                    <path fill="#4285F4" d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11c-.5 2.5-1.9 4.6-4 6v5h6.5c3.8-3.5 6.1-8.6 6.1-14.7z"/>
-                    <path fill="#34A853" d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.5-5c-1.8 1.2-4.1 2-7 2-5.3 0-9.8-3.6-11.4-8.4H6v5.1C9.4 39.5 16.2 44 24 44z"/>
-                    <path fill="#FBBC05" d="M12.6 27.8c-.4-1.2-.7-2.5-.7-3.8s.2-2.6.7-3.8v-5.1H6C4.6 17.9 3.8 20.9 3.8 24s.8 6.1 2.2 8.9l6.6-5.1z"/>
-                    <path fill="#EA4335" d="M24 11.6c3 0 5.7 1 7.8 3.1l5.8-5.8C34.1 5.6 29.5 4 24 4 16.2 4 9.4 8.5 6 15.1l6.6 5.1c1.6-4.9 6.1-8.6 11.4-8.6z"/>
-                </svg>
-
-                Continue with Google
-
-            </button>
-
-
-            <div class="signup-text">
-
-                Don't have an account?
-
-                <a href="/register">
-                    Create an account
-                </a>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <script>
-
-        // Show / Hide password
-
-        function togglePassword() {
-
-            const password = document.getElementById('password');
-
-            const button = document.querySelector('.toggle-password');
-
-            if (password.type === 'password') {
-
-                password.type = 'text';
-
-                button.textContent = 'Hide';
-
-            } else {
-
-                password.type = 'password';
-
-                button.textContent = 'Show';
-
+            if (successMessage) {
+                showToast(successMessage);
+                sessionStorage.removeItem("successMessage");
             }
-
-        }
-
-    </script>
-
+        </script>
 </body>
+
 </html>

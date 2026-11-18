@@ -1,0 +1,19 @@
+<div id="toastAlert" class="toast-alert">
+    <span id="toastMessage"></span>
+</div>
+
+<script>
+    function showToast(message, type = "success") {
+        const toast = document.getElementById("toastAlert");
+        const messageElement = document.getElementById("toastMessage");
+
+        toast.className = "toast-alert " + type;
+        messageElement.textContent = message;
+
+        toast.classList.add("show");
+
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 3000);
+    }
+</script>
